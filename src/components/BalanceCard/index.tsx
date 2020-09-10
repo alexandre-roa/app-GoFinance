@@ -13,7 +13,7 @@ import {
 interface BalanceCardProps {
   total?: boolean;
   title: string;
-  value: number;
+  value: string;
   icon: object;
   date: string;
 }
