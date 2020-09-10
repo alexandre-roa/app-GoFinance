@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { Image } from 'react-native';
 
 import {
   Container,
@@ -12,12 +12,8 @@ import {
 
 import income from '../../assets/income.png';
 
-interface CardProps {
-  size?: 'small' | 'large';
-}
-
-const Card: React.FC<CardProps> = ({ size = 'large' }: CardProps) => (
-  <Container size={size}>
+const BalanceCard: React.FC = () => (
+  <Container>
     <CardContent>
       <Header>
         <Title>Entradas</Title>
@@ -29,4 +25,4 @@ const Card: React.FC<CardProps> = ({ size = 'large' }: CardProps) => (
   </Container>
 );
 
-export default Card;
+export default BalanceCard;

@@ -1,13 +1,24 @@
 import React from 'react';
-import { Container, Text } from './styles';
+import { Container, Title } from './styles';
 import Header from '../../components/Header';
-import Card from '../../components/Card';
+import BalanceCard from '../../components/BalanceCard';
+import TransactionCard from '../../components/TransactionCard';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Dashboard: React.FC = () => (
   <>
     <Header />
+
     <Container>
-      <Card />
+      <BalanceCard />
+      <ScrollView>
+        <Title>Listagem</Title>
+        <TransactionCard />
+        <TransactionCard />
+        <TransactionCard />
+        <TransactionCard />
+        <TransactionCard />
+      </ScrollView>
     </Container>
   </>
 );
