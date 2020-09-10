@@ -1,12 +1,15 @@
 import styled from 'styled-components/native';
 
+interface CardProps {
+  total?: boolean;
+}
 export const Container = styled.View`
-  background: #fff;
+  background: ${({ total }: CardProps): string => (total ? '#FF872C' : '#fff')};
   width: 300px;
   height: 200px;
   border-radius: 5px;
   justify-content: center;
-  margin-top: -114px;
+  margin-right: 8px;
 `;
 
 export const CardContent = styled.View`
@@ -26,20 +29,22 @@ export const Title = styled.Text`
   font-family: 'Poppins-Regular';
   font-size: 14px;
   line-height: 21px;
-  color: #363f5f;
+  color: ${({ total }: CardProps): string => (total ? '#fff' : '#363F5F')};
 `;
+
+export const Icon = styled.Image``;
 
 export const Value = styled.Text`
   font-family: 'Poppins-Regular';
   font-size: 30px;
   line-height: 45px;
-  color: #363f5f;
+  color: ${({ total }: CardProps): string => (total ? '#fff' : '#363F5F')};
 `;
 
 export const Description = styled.Text`
   font-family: 'Poppins-Regular';
   font-size: 12px;
   line-height: 18px;
-  color: #969cb3;
+  color: ${({ total }: CardProps): string => (total ? '#fff' : '#969cb3')};
   margin-bottom: 48px;
 `;

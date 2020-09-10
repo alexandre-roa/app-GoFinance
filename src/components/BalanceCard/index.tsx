@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-native';
 
 import {
   Container,
@@ -7,22 +6,37 @@ import {
   Title,
   Header,
   Value,
+  Icon,
   Description,
 } from './styles';
 
-import income from '../../assets/income.png';
+interface BalanceCardProps {
+  total?: boolean;
+  title: string;
+  value: number;
+  icon: object;
+  date: string;
+}
 
-const BalanceCard: React.FC = () => (
-  <Container>
-    <CardContent>
-      <Header>
-        <Title>Entradas</Title>
-        <Image source={income} />
-      </Header>
-      <Value>R$ 17.400,00</Value>
-      <Description>Última entrada dia 13 de abril</Description>
-    </CardContent>
-  </Container>
-);
+const BalanceCard: React.FC<BalanceCardProps> = ({
+  total = false,
+  title,
+  value,
+  icon,
+  date,
+}: BalanceCardProps) => {
+  return (
+    <Container total={total}>
+      <CardContent>
+        <Header>
+          <Title total={total}>{title}</Title>
+          <Icon total={total} source={icon} />
+        </Header>
+        <Value total={total}>R$ {value}</Value>
+        <Description total={total}>Última entrada dia {date}</Description>
+      </CardContent>
+    </Container>
+  );
+};
 
 export default BalanceCard;

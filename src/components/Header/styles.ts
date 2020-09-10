@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 
 interface ContainerProps {
   size?: 'small' | 'large';
@@ -10,7 +10,6 @@ export const Container = styled.View`
   padding: ${({ size }) =>
     size === 'small' ? '24px 24px ' : '24px 24px 150px'};
 `;
-
 export const HeaderContent = styled.View`
   flex-direction: row;
   justify-content: space-between;
@@ -18,7 +17,10 @@ export const HeaderContent = styled.View`
 `;
 
 export const Title = styled.Text`
-  margin-right: 24px;
+  margin-right: 16px;
   color: #fff;
+  font-size: 14px;
+  line-height: 21px;
+  opacity: 0.6;
   font-family: 'Poppins-Regular';
 `;
