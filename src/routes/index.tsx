@@ -11,7 +11,7 @@ const Routes: React.FC = () => (
     initialRouteName="Dashboard"
     screenOptions={{
       headerShown: false,
-      cardStyle: { backgroundColor: '#5636D3' },
+      cardStyle: { backgroundColor: '#F0F2F5' },
     }}
   >
     <Finances.Screen name="Dashboard" component={Dashboard} />

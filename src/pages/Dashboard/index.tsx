@@ -1,10 +1,15 @@
 import React from 'react';
 import { Container, Text } from './styles';
+import Header from '../../components/Header';
+import Card from '../../components/Card';
 
 const Dashboard: React.FC = () => (
-  <Container>
-    <Text>Dashboard</Text>
-  </Container>
+  <>
+    <Header />
+    <Container>
+      <Card />
+    </Container>
+  </>
 );
 
 export default Dashboard;
