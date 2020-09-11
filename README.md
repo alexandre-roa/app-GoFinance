@@ -44,4 +44,6 @@ This project was developed with the following technologies:
 
 - ✔️ TypeORM
 
+- ✔️ Docker
+
 Made with 💜 by Alexndre Roa 👋 [See my linkedin](https://www.linkedin.com/in/azaroa/)
