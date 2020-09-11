@@ -1,6 +1,6 @@
 import React from 'react';
 
-import sales from '../../assets/dollar.png';
+import sales from '../../assets/sales.png';
 
 import {
   Container,
