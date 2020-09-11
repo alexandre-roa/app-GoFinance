@@ -32,7 +32,7 @@ const BalanceCard: React.FC<BalanceCardProps> = ({
           <Title total={total}>{title}</Title>
           <Icon total={total} source={icon} />
         </Header>
-        <Value total={total}>R$ {value}</Value>
+        <Value total={total}>R$ {value},00</Value>
         <Description total={total}>Última entrada dia {date}</Description>
       </CardContent>
     </Container>

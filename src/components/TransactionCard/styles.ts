@@ -22,11 +22,18 @@ export const Title = styled.Text`
   color: #363f5f;
 `;
 
-export const Value = styled.Text`
+export const Income = styled.Text`
   font-family: 'Poppins-Regular';
   font-size: 20px;
   line-height: 30px;
   color: #12a454;
+`;
+
+export const Outcome = styled.Text`
+  font-family: 'Poppins-Regular';
+  font-size: 20px;
+  line-height: 30px;
+  color: #e83f5b;
 `;
 
 export const Footer = styled.View`

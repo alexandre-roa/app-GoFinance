@@ -7,27 +7,46 @@ import {
   CardContent,
   Title,
   Footer,
-  Value,
+  Income,
+  Outcome,
   Type,
   Icon,
   Description,
 } from './styles';
 
-const BalanceCard: React.FC = () => (
+interface Transaction {
+  title: string;
+  value: number;
+  date: Date;
+  type: 'income' | 'outcome';
+  category: string;
+}
+
+const TransactionCard: React.FC<Transaction> = ({
+  title,
+  type,
+  value,
+  category,
+  date,
+}: Transaction) => (
   <Container>
     <CardContent>
-      <Title>Desenvolvimento de site</Title>
-      <Value>R$ 12.000,00</Value>
+      <Title>{title}</Title>
+      {type === 'income' ? (
+        <Income>R$ {value},00 </Income>
+      ) : (
+        <Outcome>R$ - {value},00 </Outcome>
+      )}
       <Footer>
         <Type>
           <Icon source={sales} />
-          <Description>Vendas</Description>
+          <Description>{category}</Description>
         </Type>
 
-        <Description>13/04/2020</Description>
+        <Description>{date}</Description>
       </Footer>
     </CardContent>
   </Container>
 );
 
-export default BalanceCard;
+export default TransactionCard;

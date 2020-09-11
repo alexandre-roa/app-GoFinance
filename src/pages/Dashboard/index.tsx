@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useEffect } from 'react';
-import { ScrollView } from 'react-native';
-import { Container, Title, Balance } from './styles';
+import { FlatList } from 'react-native';
+import { Container, Title, Balance, TransactionsContainer } from './styles';
 import Header from '../../components/Header';
 import BalanceCard from '../../components/BalanceCard';
 import TransactionCard from '../../components/TransactionCard';
@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
             title="Entradas"
             icon={income}
             value={balance.income}
-            date="16 de abril"
+            date={'16 de abril'}
           />
           <BalanceCard
             title="Saídas"
@@ -51,14 +51,28 @@ const Dashboard: React.FC = () => {
             date="16 de abril"
           />
         </Balance>
-        <ScrollView>
-          <Title>Transações</Title>
-          <TransactionCard />
-          <TransactionCard />
-          <TransactionCard />
-          <TransactionCard />
-          <TransactionCard />
-        </ScrollView>
+
+        <TransactionsContainer contentContainerStyle={{ paddingVertical: 24 }}>
+          <Title>Listagem</Title>
+          <FlatList
+            style={{ flex: 1 }}
+            contentContainerStyle={{ flexGrow: 1 }}
+            data={transactions}
+            horizontal={false}
+            scrollEnabled={true}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => (
+              <TransactionCard
+                key={item.id}
+                title={item.title}
+                type={item.type}
+                value={item.value}
+                category={item.category.title}
+                date={item.created_at}
+              />
+            )}
+          />
+        </TransactionsContainer>
       </Container>
     </>
   );
