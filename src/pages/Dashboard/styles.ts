@@ -8,13 +8,16 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-family: 'Poppins-Regular';
   font-size: 24px;
-  margin: 24px 0 24px 24px;
+  margin: 0px 0 16px 24px;
 `;
 
 export const Balance = styled.ScrollView`
   margin-top: -114px;
-  height: 240px;
-  margin-bottom: 8px;
+  height: 0px;
+  margin-bottom: 0px;
 `;
 
-export const TransactionsContainer = styled.ScrollView``;
+export const TransactionsList = styled.View`
+  /* margin-top: 8px; */
+  flex: 1;
+`;

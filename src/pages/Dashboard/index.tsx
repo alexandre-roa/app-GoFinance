@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
-import { Container, Title, Balance, TransactionsContainer } from './styles';
+import { Container, Title, Balance, TransactionsList } from './styles';
 import Header from '../../components/Header';
 import BalanceCard from '../../components/BalanceCard';
 import TransactionCard from '../../components/TransactionCard';
@@ -51,12 +51,11 @@ const Dashboard: React.FC = () => {
             date="16 de abril"
           />
         </Balance>
-
-        <TransactionsContainer contentContainerStyle={{ paddingVertical: 24 }}>
+        <TransactionsList>
           <Title>Listagem</Title>
           <FlatList
             style={{ flex: 1 }}
-            contentContainerStyle={{ flexGrow: 1 }}
+            contentContainerStyle={{ paddingVertical: 16 }}
             data={transactions}
             horizontal={false}
             scrollEnabled={true}
@@ -68,11 +67,10 @@ const Dashboard: React.FC = () => {
                 type={item.type}
                 value={item.value}
                 category={item.category.title}
-                date={item.created_at}
               />
             )}
           />
-        </TransactionsContainer>
+        </TransactionsList>
       </Container>
     </>
   );

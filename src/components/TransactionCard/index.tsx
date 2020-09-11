@@ -17,7 +17,6 @@ import {
 interface Transaction {
   title: string;
   value: number;
-  date: Date;
   type: 'income' | 'outcome';
   category: string;
 }
@@ -27,7 +26,6 @@ const TransactionCard: React.FC<Transaction> = ({
   type,
   value,
   category,
-  date,
 }: Transaction) => (
   <Container>
     <CardContent>
@@ -43,7 +41,7 @@ const TransactionCard: React.FC<Transaction> = ({
           <Description>{category}</Description>
         </Type>
 
-        <Description>{date}</Description>
+        <Description>16 de abril</Description>
       </Footer>
     </CardContent>
   </Container>
