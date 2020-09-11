@@ -4,7 +4,7 @@
 <br>
 </h1>
 
-<p align="center">Aplication for people who love to teach and learn.</p>
+<p align="center">Aplication for organize your finances.</p>
 
 <div align="center" >
   <img src="./readMEFiles/capa.png" alt="board" height="425">
